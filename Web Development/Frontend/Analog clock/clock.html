@@ -1,17 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Analog clock</title>
-    <link rel="stylesheet" href="clock.css">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: rgb(25, 25, 26);
+        }
+
+        .container {
+            position: relative;
+            padding: 0px;
+            margin: 10vh auto;
+            background-color: rgb(25, 25, 26);
+            box-shadow: 0px 0px 30px rgb(255, 255, 255), 0px 0px 20px rgb(255, 255, 255) inset;
+            border: 1px solid white;
+            height: 80vmin;
+            width: 80vmin;
+            border-radius: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #hour {
+            position: absolute;
+            background-color: rgb(5, 255, 238);
+            height: 25%;
+            width: 1.5%;
+            top: 25%;
+            left: 49%;
+            border-radius: 10px;
+            transform-origin: bottom;
+        }
+
+        #minute {
+            position: absolute;
+            background-color: rgb(255, 255, 255);
+            height: 37%;
+            width: 1.5%;
+            top: 13%;
+            left: 49%;
+            border-radius: 10px;
+            opacity: 0.9;
+            transform-origin: bottom;
+        }
+
+        #second {
+            position: absolute;
+            background-color: rgb(252, 0, 0);
+            height: 41%;
+            width: 0.8%;
+            top: 9%;
+            left: 49%;
+            border-radius: 10px;
+            opacity: 0.8;
+            transform-origin: bottom;
+        }
+
+        #dot {
+            position: absolute;
+            background-color: rgb(25, 25, 26);
+            box-shadow: 0px 0px 5px rgb(255, 255, 255), 0px 0px 5px rgb(255, 255, 255) inset;
+            border: 1px solid white;
+            height: 5%;
+            width: 5%;
+            top: 47.2%;
+            left: 47%;
+            border-radius: 10px;
+            opacity: 1;
+            border-radius: 200px;
+        }
+        .box{
+            border: 2px solid white;
+            box-shadow: 0px 0px 30px rgb(255, 255, 255), 0px 0px 10px rgb(255, 255, 255) inset;
+            padding: 0px 33px;
+            color: white;
+            position: absolute;
+            top:120%;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 100px;
+        }
+    </style>
 </head>
+
 <body>
-    <div class="clockcontainer">
+    <div class="container">
         <div id="hour"></div>
         <div id="minute"></div>
         <div id="second"></div>
+        <div id="dot"></div>
+        <div class="box">
+
+        </div>
+
     </div>
-    <script src="clock.js"></script>
+    <script>
+        setInterval(() => {
+            d = new Date();
+            thours = d.getHours();
+            tminutes = d.getMinutes();
+            tseconds = d.getSeconds();
+            hr = 30 * thours + tminutes / 2;
+            mr = 6 * tminutes;
+            sr = 6 * tseconds;
+            hour.style.transform = `rotate(${hr}deg)`;
+            minute.style.transform = `rotate(${mr}deg)`;
+            second.style.transform = `rotate(${sr}deg)`;
+            d_m_d = d.toLocaleDateString('en-us', { weekday:"long", month:"long", day:"numeric"});
+            document.querySelector(".box").innerHTML = `<h1> ${thours}:${tminutes}:${tseconds} ${d_m_d} </h1>`
+        }, 1000);
+    </script>
 </body>
+
 </html>

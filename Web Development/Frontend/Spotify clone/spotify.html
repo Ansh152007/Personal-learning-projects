@@ -14,7 +14,11 @@
     <div class="container">
         <div class="left">
             <div class="upper">
-                <div class="logo"> <img src="Assets/logo.svg" alt="logo" style="filter: invert(1);"></div>
+                <div class="nav">
+                        <div class="logo"> <img src="Assets/logo.svg" alt="logo"></div>
+                        <div class="cross"> <img src="Assets/close.svg" alt="close"></div>
+                    
+                </div>
                 <ul>
                     <li><img src="Assets/home.svg" alt="home" style="filter: invert(1);">Home</li>
                     <li><img src="Assets/search.svg" alt="search" style="filter: invert(1);">Search</li>
@@ -46,6 +50,8 @@
         <div class="right">
             <div class="header">
                 <div class="nav">
+                    <div class="navbuttons">
+                        <div class="menu"> <img src="Assets/hamburger.svg" alt=""></div>
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path
                             d="M15 6L9.70711 11.2929C9.37377 11.6262 9.20711 11.7929 9.20711 12C9.20711 12.2071 9.37377 12.3738 9.70711 12.7071L15 18"
@@ -57,6 +63,7 @@
                             stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
                     </svg>
                 </div>
+                </div>
                 <div class="buttons">
                     <button>Sign up</button>
                     <button>Log in</button>
@@ -64,8 +71,8 @@
             </div>
             <div class="playlist">
                 <h2>Spotify Playlists</h2>
-                <div class="card-container">
-                    <div class="card">
+                <div class="card_container">
+                    <!-- <div data-folder="ncs" class="card">
                         <div class="play">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
@@ -73,10 +80,10 @@
                                     stroke-linejoin="round" />
                             </svg>
                         </div>
-                        <img src="Assets/cover.jpg" alt="">
-                        <h3>Happy Hits!</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed, provident.</p>
-                    </div>
+                        <img class="thumbnail" src="Songs/${folder}/Cover.jpg" alt="">
+                        <h3>${info.title}</h3>
+                        <p>${info.discription}</p>
+                    </div> -->
                 </div>
             </div>
             <div class="playbar">
@@ -91,7 +98,11 @@
                         <img id="play" src="Assets/play.svg" alt="">
                         <img id="next" src="Assets/nextsong.svg" alt="">
                     </div>
-                    <div class="songduration"></div>
+                    <div class="duration_volume">
+                        <div class="songduration"></div>
+                        <div class="volume"><img src="Assets/volume.svg" alt="" style="filter: invert();"></div>
+                        <input type="range" name="volume" id="range">
+                    </div>
                 </div>
             </div>
         </div>

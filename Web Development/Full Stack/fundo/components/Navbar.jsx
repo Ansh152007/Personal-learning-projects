@@ -29,8 +29,8 @@ const Navbar = ({params}) => {
     <Link href={`/${session.user.name}`}> <div className="flex items-center gap-x-3.5 py-2 px-3 rounded-lg text-sm text-white  hover:bg-white  focus:outline-none focus:bg-white  dark:text-white dark:hover:bg-pink-700 dark:hover:text-white dark:focus:bg-pink-700" >
       Profile</div>
 </Link> 
-    <Link href={"/dashboard"}> <div className="flex items-center gap-x-3.5 py-2 px-3 rounded-lg text-sm text-white  hover:bg-white  focus:outline-none focus:bg-white  dark:text-white dark:hover:bg-pink-700 dark:hover:text-white dark:focus:bg-pink-700" >
-      Dashboard</div>
+    <Link href={"/help"}> <div className="flex items-center gap-x-3.5 py-2 px-3 rounded-lg text-sm text-white  hover:bg-white  focus:outline-none focus:bg-white  dark:text-white dark:hover:bg-pink-700 dark:hover:text-white dark:focus:bg-pink-700" >
+      Help</div>
 </Link> 
   </div>
 </div></>

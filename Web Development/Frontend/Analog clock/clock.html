@@ -27,7 +27,7 @@
 
         #hour {
             position: absolute;
-            background-color: rgb(5, 255, 238);
+            background-color: #2C3E50;
             height: 25%;
             width: 1.5%;
             top: 25%;
@@ -38,7 +38,7 @@
 
         #minute {
             position: absolute;
-            background-color: rgb(255, 255, 255);
+            background-color: #ECF0F1;
             height: 37%;
             width: 1.5%;
             top: 13%;
@@ -50,7 +50,7 @@
 
         #second {
             position: absolute;
-            background-color: rgb(252, 0, 0);
+            background-color: #E74C3C;
             height: 50%;
             width: 0.8%;
             top: 9%;
@@ -78,11 +78,16 @@
             box-shadow:  28px 28px 55px #bebebe,
              -28px -28px 55px #ffffff;
             padding: 0px 33px;
-            color: black;
             position: absolute;
             top:120%;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 100px;
+            h1 {
+                color: #2C3E50;
+                span {
+                    color: #E74C3C;
+                }
+            }
         }
     </style>
 </head>
@@ -111,7 +116,7 @@
             minute.style.transform = `rotate(${mr}deg)`;
             second.style.transform = `rotate(${sr}deg)`;
             d_m_d = d.toLocaleDateString('en-us', { weekday:"long", month:"long", day:"numeric"});
-            document.querySelector(".box").innerHTML = `<h1> ${thours}:${tminutes}:${tseconds} ${d_m_d} </h1>`
+            document.querySelector(".box").innerHTML = `<h1> ${thours}:${tminutes}:${tseconds} <span>${d_m_d}</span> </h1>`
         }, 1000);
     </script>
 </body>
